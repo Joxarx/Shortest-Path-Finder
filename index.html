@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Buscador de Rutas Dijkstra y A*</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://kit.fontawesome.com/40d90a1d16.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <div class="container">
+    <h1>Buscador de Rutas Dijkstra y A*</h1>
+    <div class="algorithm-select">
+      <label for="algorithmSelect">Seleccionar Algoritmo:</label>
+      <select id="algorithmSelect">
+        <option value="dijkstra">Dijkstra</option>
+        <option value="astar">A*</option>
+      </select>
+    </div>
+    <div id="grid"></div>
+    <div class="controls">
+
+      <button id="findPathBtn">Encontrar Ruta</button>
+
+      <button id="resetBtn">Reiniciar</button>
+
+      <button id="randomizeBtn">Aleatorio</button>
+
+      <button id="showVisitedBtn">Mostrar Visitados</button>
+      
+    </div>
+    <div id="message"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

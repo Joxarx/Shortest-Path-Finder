@@ -1,0 +1,217 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 20px;
+}
+
+.algorithm-select {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.algorithm-select label {
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.algorithm-select select {
+  margin-left: 10px;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #1a237e;
+  border-radius: 4px;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 2px solid #1a237e;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.cell {
+  background-color: #e8eaf6;
+  border: 2px solid #c5cae9;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cell:hover {
+  background-color: #c5cae9;
+  transform: scale(1.05);
+}
+
+.cell.start {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.cell.end {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.cell.wall {
+  background-color: #212121;
+}
+
+.cell.visited {
+  background-color: #2196f3;
+}
+
+.cell.path {
+  background-color: #ffeb3b;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1a237e;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #283593;
+}
+
+#findPathBtn::before {
+  content: '\f124';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+}
+
+#resetBtn::before {
+  content: '\f021';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+}
+
+#randomizeBtn::before {
+  content: '\f074';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+}
+
+#showVisitedBtn::before {
+  content: '\f06e';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
+}
+
+#message {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f44336;
+  margin-top: 20px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .algorithm-select select {
+    font-size: 14px;
+  }
+
+  #grid {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 5px;
+    padding: 10px;
+  }
+
+  .cell {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin: 0 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .algorithm-select select {
+    font-size: 12px;
+  }
+
+  #grid {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 3px;
+    padding: 5px;
+  }
+
+  .cell {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin: 0 3px;
+  }
+
+  #message {
+    font-size: 14px;
+  }
+}
